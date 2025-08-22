@@ -8,7 +8,16 @@ on:
         required: false
         default: "x86_64"
         type: string
-  workflow_dispatch: null
+  workflow_dispatch:
+    inputs:
+      arch:
+        description: "Architecture (x86_64 or aarch64)"
+        required: true
+        default: "x86_64"
+        type: choice
+        options:
+          - "x86_64"
+          - "aarch64"
 
 jobs:
   
